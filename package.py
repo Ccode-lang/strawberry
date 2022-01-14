@@ -15,10 +15,16 @@ def help():
     print("remove  : remove a package")
     print("uppak   : update package list")
     sys.exit()
+# from https://raspberrypi.stackexchange.com/questions/5100/detect-that-a-python-program-is-running-on-the-pi
+def ispi():
+    try:
+        with io.open('/sys/firmware/devicetree/base/model', 'r') as m:
+            if 'raspberry pi' in m.read().lower(): return True
+    except Exception: pass
+    return False
 
 
-
-if not os.name == "posix":
+if not ispi():
     print("Please run on a supported machine")
     sys.exit()
 
