@@ -13,6 +13,7 @@ cp package.py ~/.strawberry/main
 chmod +x strawberry
 cp strawberry ~/.strawberry/bin
 cp angledat/angledat.py ~/.strawberry/lib
+cp ascii.sh ~/.strawberry
 
 cd ~/.strawberry
 git clone https://github.com/Ccode-lang/pmlist
