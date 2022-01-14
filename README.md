@@ -6,5 +6,5 @@ A package manager to install commands for raspberry pi.
 * git
 # to install run setup.sh
 # TODO
-* Make only run on Rpi
+* ~~Make only run on Rpi~~
 * Add packages (other than debug)
