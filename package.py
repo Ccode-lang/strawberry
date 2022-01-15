@@ -76,6 +76,10 @@ elif args[1] == "remove":
             print("Package is protected cannot uninstall it.")
     else:
         print("No package called that exists")
+elif args[1] == "lsinstalled":
+    installed = os.listdir(os.path.join(home, '.strawberry', 'pakbin'))
+    for i in installed:
+        print(i)
 else:
     print("Not a recognized command.")
     help()
