@@ -84,6 +84,8 @@ elif args[1] == "lsinstalled":
     installed = os.listdir(os.path.join(home, '.strawberry', 'pakbin'))
     for i in installed:
         print(i)
+elif args[1] == "ver":
+    print("Strawberry version 0.1")
 else:
     print("Not a recognized command.")
     help()
