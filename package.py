@@ -17,6 +17,7 @@ def help():
     print("uppak         : update package list")
     print("lsinstalled   : list installed packages")
     print("lsinstallable : list installable packages")
+    print("search        : search for packages")
     sys.exit()
 # from https://raspberrypi.stackexchange.com/questions/5100/detect-that-a-python-program-is-running-on-the-pi
 def ispi():
