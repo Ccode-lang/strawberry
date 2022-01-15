@@ -12,9 +12,10 @@ args = sys.argv
 
 
 def help():
-    print("install : install a package")
-    print("remove  : remove a package")
-    print("uppak   : update package list")
+    print("install     : install a package")
+    print("remove      : remove a package")
+    print("uppak       : update package list")
+    print("lsinstalled : list installed packages")
     sys.exit()
 # from https://raspberrypi.stackexchange.com/questions/5100/detect-that-a-python-program-is-running-on-the-pi
 def ispi():
