@@ -91,6 +91,11 @@ elif args[1] == "lsinstallable":
     list = ang.read_dict(os.path.join(home, '.strawberry', 'pmlist', 'list.txt'))
     for name, val in list:
         print(name)
+elif args[1] == "search":
+    list = ang.read_dict(os.path.join(home, '.strawberry', 'pmlist', 'list.txt'))
+    for name, val in list:
+        if args[2] in name or args[2] in value:
+            print(name)
 else:
     print("Not a recognized command.")
     help()
