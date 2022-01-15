@@ -43,6 +43,9 @@ if args[1] == "install":
     if args[2] in list:
         os.chdir(os.path.join(home, '.strawberry', 'pakbin'))
         package = list[args[2]]
+        if not package.endswith(args[2]):
+            print("Invalid link found for package.")
+            sys.exit()
         if not os.path.exists(args[2]):
             exit = os.system("wget " + package + " >~/.strawberry/wget.log 2>&1")
             if exit == 0:
