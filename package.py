@@ -12,10 +12,11 @@ args = sys.argv
 
 
 def help():
-    print("install     : install a package")
-    print("remove      : remove a package")
-    print("uppak       : update package list")
-    print("lsinstalled : list installed packages")
+    print("install       : install a package")
+    print("remove        : remove a package")
+    print("uppak         : update package list")
+    print("lsinstalled   : list installed packages")
+    print("lsinstallable : list installable packages")
     sys.exit()
 # from https://raspberrypi.stackexchange.com/questions/5100/detect-that-a-python-program-is-running-on-the-pi
 def ispi():
@@ -86,6 +87,10 @@ elif args[1] == "lsinstalled":
         print(i)
 elif args[1] == "ver":
     print("Strawberry version 0.1")
+elif args[1] == "lsinstallable":
+    list = ang.read_dict(os.path.join(home, '.strawberry', 'pmlist', 'list.txt'))
+    for name, val in list:
+        print(name)
 else:
     print("Not a recognized command.")
     help()
