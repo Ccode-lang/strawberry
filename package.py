@@ -90,12 +90,13 @@ elif args[1] == "ver":
     print("Strawberry version 0.1")
 elif args[1] == "lsinstallable":
     list = ang.read_dict(os.path.join(home, '.strawberry', 'pmlist', 'list.txt'))
-    for name, val in list:
+    for name in list:
         print(name)
 elif args[1] == "search":
     list = ang.read_dict(os.path.join(home, '.strawberry', 'pmlist', 'list.txt'))
-    for name, val in list:
-        if args[2] in name or args[2] in value:
+    for name in list:
+        val = list[name]
+        if args[2] in name or args[2] in val:
             print(name)
 else:
     print("Not a recognized command.")
