@@ -8,7 +8,7 @@ A package manager to install commands for raspberry pi.
 * ~~Make only run on Rpi~~
 * ~~Add packages (other than debug)~~
 * Get some packages!!!
-If you want to add your package file to the package list go to my pmlist repo.
+If you want to add your package file to the package list go to my [pmlist](https://github.com/Ccode-lang/pmlist) repo.
 # Install
 > ⚠️ The install will not work on systems other than linux and the command installed will crash on your system if it is not raspberry pi.
 First install the required packages. (They should already be installed)  
