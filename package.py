@@ -11,6 +11,11 @@ import angledat as ang
 args = sys.argv
 
 
+def argerror(expected, real):
+    if not expected == real:
+        print("Wrong number of args")
+        sys.exit()
+
 def help():
     print("install       : install a package")
     print("remove        : remove a package")
@@ -36,6 +41,7 @@ if len(args) == 1:
     help()
 
 if args[1] == "install":
+    argerror(3, len(args))
     try:
         filler = args[2]
     except:
@@ -62,11 +68,13 @@ if args[1] == "install":
     else:
         print("No package found")
 elif args[1] == "uppak":
+    argerror(2, len(args))
     os.chdir(os.path.join(home, '.strawberry', 'pmlist'))
     exit = os.system("git pull >~/.strawberry/uppack.log 2>&1")
     if not exit == 0:
         print("Error while pulling")
 elif args[1] == "remove":
+    argerror(3, len(args))
     os.chdir(os.path.join(home, '.strawberry', 'pakbin'))
     try:
         filler = args[2]
@@ -83,16 +91,20 @@ elif args[1] == "remove":
     else:
         print("No package called that exists")
 elif args[1] == "lsinstalled":
+    argerror(2, len(args))
     installed = os.listdir(os.path.join(home, '.strawberry', 'pakbin'))
     for i in installed:
         print(i)
 elif args[1] == "ver":
+    argerror(2, len(args))
     print("Strawberry version 0.1")
 elif args[1] == "lsinstallable":
+    argerror(2, len(args))
     list = ang.read_dict(os.path.join(home, '.strawberry', 'pmlist', 'list.txt'))
     for name in list:
         print(name)
 elif args[1] == "search":
+    argerror(3, len(args))
     list = ang.read_dict(os.path.join(home, '.strawberry', 'pmlist', 'list.txt'))
     for name in list:
         val = list[name]
